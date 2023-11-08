@@ -1,11 +1,20 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { colors } from '../theme/colors'
+import { setCareerPressed } from '../redux/slices/homeSlice'
+import { useDispatch } from 'react-redux'
 
-const CareerItem = ({ item, navigation}) => {
+const CareerItem = ({ item, navigation }) => {
+
+  const dispatch = useDispatch();
+
+  const onHandleItem = () => {
+    dispatch(setCareerPressed(item))
+    navigation.navigate('classes',{item : item})
+  }
 
   return (
-    <Pressable onPress={() => navigation.navigate('classes',{item : item})}>
+    <Pressable onPress={() => onHandleItem()}>
       <Text style={styles.classText}>{item}</Text>
     </Pressable>
   )

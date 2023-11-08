@@ -19,7 +19,7 @@ const Search = ({ text, setText}) => {
             placeholder=" Buscar..."
             />
             <Pressable onPress={() => clearText()}>
-                <AntDesign name='close' size={35} color='white'/>
+                <AntDesign name='close' size={30} color='black'/>
             </Pressable>
         </View>
     )

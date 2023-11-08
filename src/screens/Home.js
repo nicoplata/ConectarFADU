@@ -2,11 +2,14 @@ import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../components/Header';
-import { careers } from '../data/careers'
 import CareerItem from '../components/CareerItem';
+import { useGetCareersQuery } from '../services/Api';
 
 const Home = ({ navigation }) => {
 
+  const items = useGetCareersQuery()
+
+  const careers = items.data;
 
   return (
     <SafeAreaView>

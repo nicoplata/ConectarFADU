@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { Pressable, SectionList, StyleSheet, Text, View } from 'react-native';
+import { SectionList, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Search from '../components/Search';
 import Header from '../components/Header';
-import { classes } from "../data/classes";
 import { colors } from '../theme/colors';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import ClassDetail from '../components/ClassDetail';
+import { useSelector } from 'react-redux';
 
 const Classes = ({ route, navigation }) => {
   const [text, setText] = useState("");
   const [classesFiltered, setClassesFiltered] = useState([]);
 
   const { item }= route.params;
-
   career = item;
 
+  const classes = useSelector( state => state.homeSlice.allClasses)
+  
   useEffect(() => {
     const filteredByCareer = classes.filter((item) => item.career.includes(career));
 
