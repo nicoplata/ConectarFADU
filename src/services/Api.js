@@ -14,8 +14,23 @@ export const Api = createApi({
 
         getClasses: builder.query({
             query: () => "classes.json"
+        }),
+        getImage: builder.query({
+            query: () => "image.json"
+        }),
+        putImage: builder.mutation({
+            query: (image) => ({
+                url: "image.json",
+                method: "PUT",
+                body: image,
+            })
         })
     })
 })
 
-export const { useGetCareersQuery, useGetClassesQuery } = Api;
+export const { 
+    useGetCareersQuery, 
+    useGetClassesQuery,
+    useGetImageQuery,
+    usePutImageMutation,
+ } = Api;

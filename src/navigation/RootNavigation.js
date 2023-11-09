@@ -12,9 +12,9 @@ const RootNavigation = () => {
       initialRouteName='home' 
       screenOptions={{headerShown: false,}}
     >
-        <Stack.Screen component={Home} name='home'/>
-        <Stack.Screen component={Classes} name='classes'/>
-        <Stack.Screen component={ClassesDetail} name='classesDetail'/>
+      <Stack.Screen component={Home} name='home'/>
+      <Stack.Screen component={Classes} name='classes'/>
+      <Stack.Screen component={ClassesDetail} name='classesDetail'/>
     </Stack.Navigator>
   )
 }

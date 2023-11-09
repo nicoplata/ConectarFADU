@@ -1,8 +1,7 @@
 import { useFonts } from 'expo-font';
-import { NavigationContainer } from '@react-navigation/native';
-import TabNav from './src/navigation/TabNav';
 import { Provider } from 'react-redux';
 import { store } from './src/redux/store';
+import MainNav from './src/navigation/MainNav';
 
 export default function App() {
 
@@ -21,9 +20,7 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <TabNav />
-      </NavigationContainer>
+      <MainNav />
     </Provider>
   );
 }
