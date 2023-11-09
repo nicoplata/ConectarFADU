@@ -6,6 +6,7 @@ import Profile from '../screens/Profile'
 import { Ionicons } from '@expo/vector-icons'; 
 import { MaterialIcons } from '@expo/vector-icons'; 
 import { colors } from '../theme/colors'
+import ProfileNav from './ProfileNav'
 
 const Tab = createBottomTabNavigator()
 
@@ -22,8 +23,8 @@ const TabNav = () => {
 
         <Tab.Screen
         options={{ tabBarIcon: ( {focused} ) => <MaterialIcons name="account-circle" size={30} color={ focused ? colors.blue : colors.lightBlue} />}}
-        name='profile' 
-        component={Profile}/>
+        name='profileNav' 
+        component={ProfileNav}/>
 
     </Tab.Navigator>
   )
